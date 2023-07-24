@@ -2,7 +2,7 @@ package com.cloudcamp.weekTwoAssignment;
 
 import java.util.Scanner;
 
-public class AddAndFindLocationUsingForEachOptimized {
+public class AddAndFindLocationUsingForOptimized {
 
   public static Clinic[] clinics = new Clinic[10];
   public static int size = 0;
