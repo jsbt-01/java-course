@@ -23,6 +23,7 @@ public class AddAndFindLocationUsingForOptimized {
           int userEnteredPin = scanner.nextInt();
           findAClinic(userEnteredPin);
           break;
+
         case 2:
 
           // Take input from the user
