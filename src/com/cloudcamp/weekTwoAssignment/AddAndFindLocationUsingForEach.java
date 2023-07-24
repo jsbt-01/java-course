@@ -19,13 +19,13 @@ public class AddAndFindLocationUsingForEach {
     boolean runProgram = true;
 
     do {
-      System.out.println(" Dear User \n Press 1 for Finding a clinic \n Press 2 for Adding a clinic \n Press 3 to quit");
+      System.out.println("\n Dear User \n Press 1 to find a clinic \n Press 2 to add a clinic \n Press 3 to quit");
       int inputDecision = scanner.nextInt();
 
       switch (inputDecision){
 
         case 1:
-          System.out.println("Please enter a pin code");
+          System.out.print("Please enter a pin code: ");
           int userEnteredPin = scanner.nextInt();
           findAClinic(userEnteredPin);
           break;
