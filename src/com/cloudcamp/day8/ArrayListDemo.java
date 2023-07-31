@@ -1,4 +1,4 @@
-package day8;
+package com.cloudcamp.day8;
 
 import java.util.ArrayList;
 

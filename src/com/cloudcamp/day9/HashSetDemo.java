@@ -1,4 +1,4 @@
-package day9;
+package com.cloudcamp.day9;
 
 import java.util.ArrayList;
 import java.util.HashSet;
