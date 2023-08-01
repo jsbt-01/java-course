@@ -1,6 +1,5 @@
-package com.cloudcamp.day10;
+package com.cloudcamp.day11;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -77,7 +76,10 @@ public class ClinicFinderProgramUsingSet {
     System.out.println("Enter pin: ");
     int pin = scanner.nextInt();
 
-    Clinic clinic =  new Clinic(name, pin);
+    System.out.println("Enter license: ");
+    int license = scanner.nextInt();
+
+    Clinic clinic =  new Clinic(name, pin, license);
     return clinic;
   }
 
