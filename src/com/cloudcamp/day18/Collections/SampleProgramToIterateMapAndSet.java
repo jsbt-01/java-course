@@ -6,6 +6,15 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Array [] - primitives int, char
+ * ArrayList - positional search->  get element by positino - not suitable for search by element
+ * LinkedList - remove element in the middle
+ * HashSet - no duplicates, search by element
+ * HashMap -  key value pair
+ * Queue -  FIFO (mathematical expressions)
+ * Stack - LIFO (java uses it for stack memory)
+ */
 public class SampleProgramToIterateMapAndSet {
 
   public static void main(String[] args) {
