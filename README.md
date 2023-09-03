@@ -15,3 +15,5 @@
 ## Day 16 - Enhance project with Files
 
 ## Day 17 - Public, Private, Protected, Static, Final
+
+## Day 29 - Spring project: REST GET, POST, PUT, DELETE, @Service
