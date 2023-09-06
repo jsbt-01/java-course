@@ -21,3 +21,5 @@
 ## Day 30 - Spring JPA intro
 
 ## Day 31 - CRUD operations with Spring JPA with Clinic entity
+
+## Day 32 - Spring JPA One-to-Many, Many-to-One. JsonView
