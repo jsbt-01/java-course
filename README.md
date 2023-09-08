@@ -25,3 +25,5 @@
 ## Day 32 - Spring JPA One-to-Many, Many-to-One. JsonView
 
 ## Day 33 - Spring JPA Many-to-Many, Entities to DTO mapping intro
+
+## Day 34 - Spring JPA One-to-One, DTO mapping full
