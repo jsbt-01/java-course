@@ -9,45 +9,34 @@ import com.example.springjpaintro.repository.ClinicRepository;
 import com.example.springjpaintro.util.DtoMapper;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ClinicService {
 
+  Logger logger = LoggerFactory.getLogger(ClinicService.class);
+
   @Autowired
   private ClinicRepository clinicRepository;
 
   public void explore() {
-    long count = clinicRepository.count();
-    System.out.println("All rows count: " + count);
+    logger.info("Executing some logic to find clinics by pincode");
 
-    long countByPinCode = clinicRepository.countByPinCode(200079);
-    System.out.println("Clinics count in 200079 pinCode: " + countByPinCode);
-
-    List<ClinicEntity> clinicEntities = clinicRepository.findByName("Care");
-    System.out.println("\nClinics by name Care");
-    displayClinics(clinicEntities);
-
-    List<ClinicEntity> ceAsc = clinicRepository.findByPinCodeOrderByName(200079);
-    System.out.println("\nClinics with pinCode 200079 ordered by name ASC");
-    displayClinics(ceAsc);
-
-    List<ClinicEntity> ceDesc = clinicRepository.findByPinCodeOrderByNameDesc(200079);
-    System.out.println("\nClinics with pinCode 200079 ordered by name DESC");
-    displayClinics(ceDesc);
-
-    List<ClinicEntity> ceGreater = clinicRepository.findByPinCodeGreaterThan(200079);
-    System.out.println("\nClinics with pinCode greater than 200079");
-    displayClinics(ceGreater);
-
-    List<ClinicEntity> foundClinicsAnd = clinicRepository.findByNameAndPinCode("Care", 200079);
-    System.out.println("\nClinics with name Care AND pinCode 200079");
-    displayClinics(foundClinicsAnd);
-
-    List<ClinicEntity> foundClinicsOr = clinicRepository.findByNameOrPinCode("Care", 200079);
-    System.out.println("\nClinics with name Care OR pinCode 200079");
+    List<ClinicEntity> foundClinicsOr = clinicRepository.findByPinCode(200079);
     displayClinics(foundClinicsOr);
+
+
+    logger.info("We are trying to fetch results using MySQL");
+    List<ClinicEntity> mySQlResults = clinicRepository.findClinicsByPinCodeButUsingMySQL(200079);
+    displayClinics(mySQlResults);
+
+    logger.info("We are trying to fetch results using JPQL");
+    List<ClinicEntity> jpqlResults = clinicRepository.findClinicsByPinCodeUsingJPQL(200079);
+    displayClinics(jpqlResults);
   }
 
   public List<ClinicDto> getClinics() {

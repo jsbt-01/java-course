@@ -7,6 +7,9 @@ import com.example.springjpaintro.service.ClinicService;
 import com.example.springjpaintro.view.ClinicView;
 import com.fasterxml.jackson.annotation.JsonView;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 // Controller -> service -> repository (data layer)
 @RestController
 public class ClinicController {
+
+  Logger logger = LoggerFactory.getLogger(ClinicController.class);
 
   @Autowired
   private ClinicService clinicService;
@@ -66,6 +71,10 @@ public class ClinicController {
 
   @GetMapping("explore")
   public void explore() {
+    logger.debug("User Rama called explore method. entering");
+
     clinicService.explore();
+
+    logger.debug("User Rama called explore method. exiting");
   }
 }
