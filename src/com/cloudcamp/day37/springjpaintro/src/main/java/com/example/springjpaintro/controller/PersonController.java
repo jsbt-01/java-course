@@ -5,6 +5,8 @@ import com.example.springjpaintro.view.PersonView;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class PersonController {
 
+
     @Autowired
     private PersonService personService;
+
+    @Qualifier("twowheeler")
+    @Autowired
+    private VehicleService vehicleService;
+
+    @Autowired
+    DataBaseService dataBaseService;
 
     @GetMapping("/person")
     public Person getperson(){
@@ -33,6 +43,18 @@ public class PersonController {
         return personUpdated;
     }
 
+    @GetMapping("/start")
+    public void startVehicle(){
+        vehicleService.startEngine();
+    }
+
+    @GetMapping("/database")
+    public void getdatabaseDetails(){
+        DataBaseDetails dataBaseDetails =  dataBaseService.getDataBaseDetails();
+        log.info("database details are {}", dataBaseDetails);
+        return;
+    }
+
 
 
     /**
@@ -43,6 +65,26 @@ public class PersonController {
      *     "height": 5,
      *     "gender": "M"
      * }
+     */
+
+
+    /**
+     *LOMBOK
+     *         @NoArgsConstructor
+     * @AllArgsConstructor
+     * @Getter
+     * @Setter
+     * @ToString
+     * @EqualsAndHashCode
+     * @Builder
+     *
+     *
+     * @Qualifier
+     *
+     * @ConfigurationProperties
+     *
+     * @value
+     *
      */
 
 }
