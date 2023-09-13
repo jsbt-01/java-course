@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ClinicService {
@@ -85,5 +86,30 @@ public class ClinicService {
       System.out.println(
           "Id: " + c.getId() + ", Name: " + c.getName() + ", PinCode: " + c.getPinCode());
     }
+  }
+
+  // @Transactional(noRollbackFor = {NullPointerException.class})
+  @Transactional(rollbackFor = {NullPointerException.class})
+  public void learningTransactions(){
+    // Deduct amount / update clinic 1
+    ClinicEntity clinicEntity = clinicRepository.findById(1);
+    clinicEntity.setName("100 Rs AMOUNT DEDUCTED");
+    clinicRepository.save(clinicEntity);
+
+
+//    if(true){
+//      throw new RuntimeException("Something bad happened");
+//    }
+
+    // deposit amount / update clinic2
+    ClinicEntity clinicEntity2 = clinicRepository.findById(2);
+    clinicEntity2.setName("100 Rs Amount Added");
+    clinicRepository.save(clinicEntity2);
+
+    if(true){
+      logger.info("Doing some less useful work");
+      throw new NullPointerException("Exception while writing some logs"); // LessUsefulWorkException
+    }
+
   }
 }
