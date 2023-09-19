@@ -27,3 +27,7 @@
 ## Day 33 - Spring JPA Many-to-Many, Entities to DTO mapping intro
 
 ## Day 34 - Spring JPA One-to-One, DTO mapping full
+
+## Day 39 - Authentication
+
+## Day 40 - HTML
