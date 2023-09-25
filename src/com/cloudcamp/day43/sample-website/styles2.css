@@ -1,0 +1,28 @@
+.demo {
+  background-color: blue;
+  margin-bottom: 20px;
+}
+
+.row-demo {
+  height: 200px;
+  background-color: orange;
+}
+
+.row-demo div {
+  background-color: green;
+  color: white;
+  height: 50px;
+}
+
+.row-demo div:nth-child(odd) {
+  background-color: red;
+  color: white;
+}
+
+.gutter-demo {
+  background-color: red;
+}
+
+.strong-font {
+  font-weight: bold;
+}

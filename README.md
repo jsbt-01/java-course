@@ -35,3 +35,5 @@
 ## Day 41 - CSS
 
 ## Day 42 - Bootstrap
+
+## Day 43 - JavaScript
