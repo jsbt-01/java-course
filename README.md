@@ -37,3 +37,5 @@
 ## Day 42 - Bootstrap
 
 ## Day 43 - JavaScript
+
+## Day 44 - Bootstrap icons, Javascript POST, DELETE
